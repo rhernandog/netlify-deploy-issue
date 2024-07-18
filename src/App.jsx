@@ -1,10 +1,22 @@
 import { useState } from 'react'
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  useGSAP(() => {
+    gsap.to(".logo.react", {
+      rotation: 360,
+      duration: 10,
+      ease: "none",
+      repeat: -1,
+    });
+  });
 
   return (
     <>
